@@ -1,0 +1,4 @@
+@use "module1.scss";
+@use "module2.scss";
+
+$color-primary: module2.article-card;

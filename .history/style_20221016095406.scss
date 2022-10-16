@@ -1,0 +1,26 @@
+@use "module1.scss";
+@
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+@mixin article-card ($color, $border-color: $color-tertiary, $font-size: 1rem) {
+    color: $color;
+    border: 1px solid;
+    border-color: $border-color;
+    font-size: $font-size;
+}
+section:nth-of-type(1) {
+    article:nth-of-type(odd){
+    @include article-card($color-secondary);
+    }
+    article:nth-of-type(even){
+    @include article-card($color-primary);
+}
+}
+section:nth-of-type(2) {
+    article {
+        @include article-card($color-tertiary, $color-secondary, 24px);
+    }
+    margin-top: 0px;
+    place-self: center;
+}
